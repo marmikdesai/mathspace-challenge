@@ -1,0 +1,8 @@
+.clearfix:after, .nav:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.nav {
+  padding: 25px;
+  float: left; }

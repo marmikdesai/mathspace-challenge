@@ -1,0 +1,47 @@
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.card {
+  text-align: center;
+  position: relative;
+  margin-bottom: 50px;
+  overflow: hidden;
+  height: 410px; }
+
+.blog {
+  height: 400px;
+  overflow: hidden;
+  position: absolute;
+  width: calc(100% - 90px);
+  margin: auto;
+  top: 0;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5); }
+  .blog:before {
+    content: "";
+    display: block;
+    background: #8C88FF;
+    position: absolute;
+    top: -200px;
+    left: -140px;
+    right: 0;
+    height: 100%;
+    transform: rotate(-10deg);
+    z-index: -1; }
+  .blog h2 {
+    color: #FFFFFF;
+    marign-bottom: 20px; }
+  .blog i {
+    display: block;
+    margin: 0 auto 20px;
+    width: 40px;
+    height: 40px; }
+  .blog .go-button {
+    background: #50D2C2;
+    width: 100px;
+    line-height: 40px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    border: 0;
+    cursor: pointer; }

@@ -1,0 +1,7 @@
+@import './styles/main';
+
+.nav {
+  padding: 25px;
+  float: left;
+  @extend %clearfix;
+}

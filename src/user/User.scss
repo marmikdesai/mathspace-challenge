@@ -1,0 +1,22 @@
+@import './styles/main';
+
+.user {
+  padding: 5px;
+  float: right;
+  @extend %clearfix;
+
+  img {
+    vertical-align: middle
+  }
+
+  &.online:after {
+    content: "";
+    @include size(10px,10px);
+
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+}

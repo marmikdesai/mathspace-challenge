@@ -1,0 +1,19 @@
+.clearfix:after, .user:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.user {
+  padding: 5px;
+  float: right; }
+  .user img {
+    vertical-align: middle; }
+  .user.online:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    top: 8px;
+    right: 10px; }

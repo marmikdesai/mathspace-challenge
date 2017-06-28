@@ -1,0 +1,11 @@
+@import './styles/main';
+
+.header {
+  background: $pink;
+  margin-bottom: 20px;
+}
+.wrapper {
+  position: relative;
+  z-index: 1;
+  @extend %clearfix;
+}

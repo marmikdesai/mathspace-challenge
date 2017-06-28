@@ -1,0 +1,12 @@
+// usage: @include vertical-align-el;
+
+@mixin vertical-align-el {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+// usage: @size(10,10);
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

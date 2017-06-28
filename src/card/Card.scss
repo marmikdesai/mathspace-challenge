@@ -1,0 +1,53 @@
+@import './styles/main';
+
+.card {
+  text-align: center;
+  position: relative;
+  margin-bottom: 50px;
+  overflow: hidden;
+  height: 410px;
+}
+
+.blog {
+  height: 400px;
+  overflow: hidden;
+  position: absolute;
+  width: calc(100% - 90px);
+  margin: auto;
+  top: 0;
+  box-shadow: 0 0 3px 3px rgba(0,0,0,0.5);
+
+  &:before {
+    content: "";
+    display: block;
+    background: $blue;
+    position: absolute;
+    top: -200px;
+    left: -140px;
+    right: 0;
+    height: 100%;
+    transform: rotate(-10deg);
+    z-index: -1;
+  }
+
+  h2 {
+    color: $white;
+    marign-bottom: 20px;
+  }
+
+  i {
+    display: block;
+    margin: 0 auto 20px;
+    @include size(40px, 40px);
+  }
+
+  .go-button {
+    background: $green;
+    width: 100px;
+    line-height: 40px;
+    border-radius: 20px;
+    color: $white;
+    border: 0;
+    cursor: pointer;
+  }
+}
