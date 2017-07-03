@@ -21,11 +21,36 @@ const subtopics = [
   ]
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      subtopics: subtopics
+    }
+    this.onUpdate = this.onUpdate.bind(this);
+  }
+
+  onUpdate (data) {
+    let list = this.state.subtopics;
+    list.filter(function(val, i){
+  	   if(val.index === data.index) {
+         debugger;
+         alert("check this line")
+           this.setState({
+//             https://facebook.github.io/react/docs/update.html
+//             items: update(this.state.items, {1: {name: {$set: 'updated field name'}}})
+             subtopics: this.state.subtopics[data.index].completed: data.status
+           });
+       }
+
+    }.bind(this))
+
+  }
+
   render() {
     return (
       <div className="App">
-        <Header title={topic} subtopics={subtopics}/>
-        <Card subtopics={subtopics}/>
+        <Header title={topic} subtopics={this.state.subtopics} />
+        <Card subtopics={this.state.subtopics} onUpdate={this.onUpdate.bind(this)} />
         <Footer />
       </div>
     );
