@@ -12,7 +12,7 @@ class Pagination extends Component {
   }
 
   render() {
-    let classes = (this.props.card.completed ? "available" : "") + " " + (this.props.card.index === 9 ? "active" : "")
+    let classes = (this.props.card.completed ? "available" : "") + " " + (this.props.card.index === this.props.activeSlide ? "active" : "")
     return (
       <li className={classes}><a href="#" onClick={this.handleClick}>{this.props.card.index}</a></li>
     )
@@ -30,7 +30,7 @@ class SliderPagination extends Component {
   render() {
     var array = [];
     this.props.cards.forEach((card, i) => {
-      array.push(<Pagination card={card} key={i} onChange={this.props.onChange.bind(this)}/>)
+      array.push(<Pagination card={card} key={i} onChange={this.props.onChange.bind(this)} activeSlide={parseInt(this.props.activeSlide, 10)} />)
     })
 
     return (

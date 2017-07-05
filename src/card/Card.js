@@ -14,11 +14,13 @@ class CardDetails extends Component {
   }
 
   handleClick() {
-  // need to check this 
-    this.setState(() => ({
+    this.setState({
       status: !this.props.card.completed,
       index: this.props.card.index
-    }));
+    }, this.updatingCard);
+  }
+
+  updatingCard(){
     this.props.onUpdate(this.state)
   }
 
@@ -41,9 +43,7 @@ class CardList extends Component {
     cards.filter((card, i) => {
       const _this = this;
 
-      return (parseInt(_this.props.activeSlide) === card.index)
-              ? array.push(<CardDetails card={card} key={i} onUpdate={this.props.onUpdate.bind(this)} activeSlide={this.props.activeSlide}/>)
-              : null
+      return (parseInt(_this.props.activeSlide, 10) === card.index) ? array.push(<CardDetails card={card} key={i} onUpdate={this.props.onUpdate.bind(this)} activeSlide={this.props.activeSlide}/>) : null
     })
 
     return (

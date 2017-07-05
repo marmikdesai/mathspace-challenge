@@ -14,7 +14,7 @@ class Header extends Component {
           <User />
         </div>
         <PageTitle title={this.props.title}/>
-        <SliderPagination cards={this.props.subtopics} onChange={this.props.onChange.bind(this)}/>
+        <SliderPagination cards={this.props.subtopics} onChange={this.props.onChange.bind(this)} activeSlide={this.props.activeSlide} />
       </header>
     );
   }

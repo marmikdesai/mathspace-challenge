@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header title={topic} subtopics={this.state.subtopics} onChange={this.onChange.bind(this)} />
+        <Header title={topic} subtopics={this.state.subtopics} onChange={this.onChange.bind(this)} activeSlide={this.state.activeSlide}/>
         <Card subtopics={this.state.subtopics} onUpdate={this.onUpdate.bind(this)} activeSlide={this.state.activeSlide} />
         <Footer />
       </div>
