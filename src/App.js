@@ -24,31 +24,37 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      subtopics: subtopics
+      subtopics: subtopics,
+      activeSlide: 1
     }
     this.onUpdate = this.onUpdate.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(slideNumber) {
+    this.setState({
+      activeSlide: slideNumber
+    });
   }
 
   onUpdate (data) {
     let list = this.state.subtopics;
     list.filter(function(val, i){
-  	   if(val.index === data.index) {
-         const subtopics = this.state.subtopics;
-         subtopics[val.index-1].completed = data.status;
-           this.setState({
-              subtopics
-           });
-       }
-
+      if(val.index === data.index) {
+        const subtopics = this.state.subtopics;
+        subtopics[val.index-1].completed = data.status;
+        this.setState({
+          subtopics
+        });
+      }
     }.bind(this))
-
   }
 
   render() {
     return (
       <div className="App">
-        <Header title={topic} subtopics={this.state.subtopics} />
-        <Card subtopics={this.state.subtopics} onUpdate={this.onUpdate.bind(this)} />
+        <Header title={topic} subtopics={this.state.subtopics} onChange={this.onChange.bind(this)} />
+        <Card subtopics={this.state.subtopics} onUpdate={this.onUpdate.bind(this)} activeSlide={this.state.activeSlide} />
         <Footer />
       </div>
     );

@@ -2,10 +2,19 @@ import React, { Component } from 'react';
 import './SliderPagination.css';
 
 class Pagination extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.onChange(e.target.text)
+  }
+
   render() {
     let classes = (this.props.card.completed ? "available" : "") + " " + (this.props.card.index === 9 ? "active" : "")
     return (
-      <li className={classes}><a href="#">{this.props.card.index}</a></li>
+      <li className={classes}><a href="#" onClick={this.handleClick}>{this.props.card.index}</a></li>
     )
   }
 }
@@ -21,7 +30,7 @@ class SliderPagination extends Component {
   render() {
     var array = [];
     this.props.cards.forEach((card, i) => {
-      array.push(<Pagination card={card} key={i} />)
+      array.push(<Pagination card={card} key={i} onChange={this.props.onChange.bind(this)}/>)
     })
 
     return (
