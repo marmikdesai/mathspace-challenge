@@ -33,12 +33,10 @@ class App extends Component {
     let list = this.state.subtopics;
     list.filter(function(val, i){
   	   if(val.index === data.index) {
-         debugger;
-         alert("check this line")
+         const subtopics = this.state.subtopics;
+         subtopics[val.index-1].completed = data.status;
            this.setState({
-//             https://facebook.github.io/react/docs/update.html
-//             items: update(this.state.items, {1: {name: {$set: 'updated field name'}}})
-             subtopics: this.state.subtopics[data.index].completed: data.status
+              subtopics
            });
        }
 

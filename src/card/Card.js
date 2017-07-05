@@ -52,7 +52,6 @@ class CardList extends Component {
 }
 
 class Card extends Component {
-
   render() {
     return (
       <section className="card">
